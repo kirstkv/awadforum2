@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Forum:</b>
+  <%= @forum.name %>
+</p>
+
+<p>
+  <b>Topics:</b>
+  <%= @forum.description %>
+</p>
+
+<h2>New Post</h2>
+<%= render :partial => @topic = Topic.new, :locals => { :button_name => 'Create' } %>
+
+<%= link_to 'New Topic', new_topic_path(@forum) %>
+<%= link_to 'Edit', edit_forum_path(@forum) %>
+<%= link_to 'Back', forums_path %>
